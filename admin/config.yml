@@ -2,6 +2,8 @@ backend:
   name: github
   repo: kris-lisik/coaching-site
   branch: main
+  base_url: https://0to1method.com
+  auth_endpoint: /.netlify/functions/auth
 
 media_folder: "images"
 public_folder: "/images"
