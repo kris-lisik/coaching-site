@@ -1,24 +1,12 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: kris-lisik/coaching-site
   branch: main
 
 media_folder: "images"
 public_folder: "/images"
 
 collections:
-  - name: "pages"
-    label: "Страници"
-    files:
-      - label: "Начална страница"
-        name: "home"
-        file: "content.json"
-        fields:
-          - { label: "Заглавие", name: "title", widget: "string" }
-          - { label: "Описание", name: "description", widget: "text" }
-          - { label: "Цена Програма 1", name: "price1", widget: "string" }
-          - { label: "Цена Програма 2", name: "price2", widget: "string" }
-          - { label: "Instagram линк", name: "instagram", widget: "string" }
-
   - name: "blog"
     label: "Блог постове"
     folder: "posts"
