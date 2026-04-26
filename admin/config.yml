@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Страници"
+    files:
+      - label: "Начална страница"
+        name: "home"
+        file: "content.json"
+        fields:
+          - { label: "Заглавие", name: "title", widget: "string" }
+          - { label: "Описание", name: "description", widget: "text" }
+          - { label: "Цена Програма 1", name: "price1", widget: "string" }
+          - { label: "Цена Програма 2", name: "price2", widget: "string" }
+          - { label: "Instagram линк", name: "instagram", widget: "string" }
+
+  - name: "blog"
+    label: "Блог постове"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Заглавие", name: "title", widget: "string" }
+      - { label: "Дата", name: "date", widget: "datetime" }
+      - { label: "Снимка", name: "image", widget: "image" }
+      - { label: "Съдържание", name: "body", widget: "markdown" }
