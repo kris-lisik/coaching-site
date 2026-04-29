@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
+  <style>
+.ba-container {
+  position: relative;
+  max-width: 500px;
+}
+
+.ba-container img {
+  width: 100%;
+}
+
+.ba-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+.ba-slider {
+  width: 100%;
+  margin-top: 10px;
+}
+</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>0to1 Method — Kristiyan Stefanov | Science-Based Coaching</title>
@@ -111,6 +134,13 @@ section { padding:100px 5%; }
 .tz-app-sub { font-size:.8rem; color:rgba(255,255,255,.4); }
 
 /* RESULTS */
+  <div class="ba-container">
+  <img src="assets/before.jpg" class="ba-img">
+  <div class="ba-overlay">
+    <img src="assets/after.jpg" class="ba-img">
+  </div>
+  <input type="range" min="0" max="100" value="50" class="ba-slider">
+</div>
 #results { background:var(--white); }
 .results-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; }
 .result-card { background:var(--cream); border:1px solid var(--border); border-radius:20px; padding:2rem; transition:transform .3s,box-shadow .3s; position:relative; overflow:hidden; }
@@ -678,3 +708,11 @@ function closeLB(e) {
 </script>
 </body>
 </html>
+<script>
+const slider = document.querySelector(".ba-slider");
+const overlay = document.querySelector(".ba-overlay");
+
+slider.addEventListener("input", function () {
+  overlay.style.width = this.value + "%";
+});
+</script>
